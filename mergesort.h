@@ -64,17 +64,13 @@ void merge(int arr[], int l, int m, int r)
 
 void mergesort(int arr[], int l, int r)
 {
-
     setviewport(0,0,1000,600,0);
-
-    outtextxy(10,650," MERGE   SORT");
-
+    outtextxy(10,650,"MERGE SORT");
     if (l < r)
     {
         int m = l+(r-l)/2;
         mergesort(arr, l, m);
         mergesort(arr, m+1, r);
-
         merge(arr, l, m, r);
     }
 }
