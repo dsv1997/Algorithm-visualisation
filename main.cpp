@@ -9,11 +9,11 @@ using namespace std;
 class rectanglearray{
    public:
        int n;
-       int *ar=new int[n];
-       void generatear()
-       {
+       int *ar;
+       void generatear(int n)
+       {  ar=new int[n];
          for(int i=n-1;i>=0;i--)
-            ar[i]=rand()%600+4;
+            ar[i]=rand()%600+1;
        }
 };
 void create(int ar[],int n){
@@ -21,20 +21,21 @@ void create(int ar[],int n){
         drawbar(i,ar[i],GREEN);
 }
 int main()
-{     initwindow(1008,700,"Sorting",1,1,false,true);
+{     initwindow(1000,700,"Sorting",1,1,false,true);
       rectanglearray obj;
-      obj.n=116 ;
-      obj.generatear();
+      obj.n=91;
+      obj.generatear(obj.n);
       create(obj.ar,obj.n);
-      delay(100);
-      selectionsort(obj.ar,obj.n);
-      obj.generatear();
+      delay(1000);
+      selectionsort(obj.ar,obj.n);cleardevice();
+      obj.generatear(obj.n);
       create(obj.ar,obj.n);
-      insertionsort(obj.ar,obj.n);
-      obj.generatear();
+
+      insertionsort(obj.ar,obj.n);cleardevice();
+      obj.generatear(obj.n);
       create(obj.ar,obj.n);
-      quicksort(obj.ar,0,obj.n);
-      obj.generatear();
+      quicksort(obj.ar,0,obj.n);cleardevice();
+      obj.generatear(obj.n);
       create(obj.ar,obj.n);
       mergesort(obj.ar,0,obj.n);
 	  getch();
