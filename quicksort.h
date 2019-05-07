@@ -4,7 +4,9 @@ int partition (int arr[], int low, int high)
 {
     int pivot = arr[high];
     int i = (low - 1);
-   //drawbar(i,arr[i],CYAN);
+     drawbar(i,arr[i],MAGENTA);
+     drawbar(high,arr[high],MAGENTA);
+     delay(20);
     for (int j = low; j <= high- 1; j++)
     {
 
@@ -17,19 +19,18 @@ int partition (int arr[], int low, int high)
             drawbar(i,arr[i],GREEN);
             drawbar(j,arr[j],GREEN);
         }
-        else{
-            drawbar(j,arr[j],BLUE);
-            delay(10);
-            drawbar(j,arr[j],GREEN);
-            delay(10);
-        }
+       else{
+          delay(20);
+           }
     }
             drawbar(i+1,arr[i+1],BLUE);
             drawbar(high,arr[high],BLUE);
             swap(i + 1, high,arr);
             drawbar(i+1,arr[i+1],GREEN);
             drawbar(high,arr[high],GREEN);
-            delay(8);
+            delay(20);
+            drawbar(low-1,arr[low-1],GREEN);
+            drawbar(high,arr[high],GREEN);delay(20);
     return (i + 1);
 }
 
